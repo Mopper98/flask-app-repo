@@ -1,0 +1,18 @@
+# Значения для Helm-чарта Flask-приложения
+
+image:
+  repository: moppperdockerhub/flask-hello   # имя образа на Docker Hub
+  tag: latest                                    # тег образа
+
+service:
+  type: NodePort                              # тип сервиса внутри кластера
+  port: 5000                                  # порт сервиса
+
+ingress:
+  enabled: true                               # включаем Ingress
+  className: "nginx"                          # имя Ingress Controller
+  hosts:
+    - host: flask.local                       # локальный хост (добавить в /etc/hosts)
+      paths:
+        - path: /                             # весь трафик на сервис
+          pathType: Prefix
