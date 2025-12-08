@@ -2,7 +2,7 @@
 
 image:
   repository: moppperdockerhub/flask-hello   # имя образа на Docker Hub
-  tag: latest                                    # тег образа
+  tag: v1                                    # тег образа
 
 service:
   type: NodePort                              # тип сервиса внутри кластера
