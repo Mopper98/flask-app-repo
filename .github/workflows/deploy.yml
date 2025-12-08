@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]   # pipeline запускается при push в main
+    branches: [ "master" ]   # pipeline запускается при push в main
 
 jobs:
   build_and_push:
