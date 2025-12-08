@@ -7,6 +7,7 @@ app = Flask(__name__)
 def hello():
     return jsonify({
         "message": "Hello from Flask in Docker & Kubernetes!",
+        "message": "New Branch",
         "pod": os.environ.get("MY_POD", "unknown")
     })
 
