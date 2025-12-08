@@ -17,8 +17,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}  # твой логин
-          password: ${{ secrets.DOCKER_PASSWORD }}  # токен
+          username: ${{ secrets.DOCKERHUB_USERNAME }}  # твой логин
+          password: ${{ secrets.DOCKER_PASSWORD_TOKEN }}  # токен
         # Нужно, чтобы action смог пушить образы
 
       - name: Build and push the Docker image
@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-app:latest
         # Сборка и пуш Docker image
 
   deploy:
@@ -48,7 +48,7 @@ jobs:
       - name: Deploy using Helm
         run: |
           helm upgrade --install flask-app ./flask-app \
-            --set image.repository=${{ secrets.DOCKER_USERNAME }}/flask-app \
+            --set image.repository=${{ secrets.DOCKERHUB_USERNAME }}/flask-app \
             --set image.tag=latest \
             --namespace default
         # Обновляет приложение через Helm chart
