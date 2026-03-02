@@ -6,8 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return jsonify({
-        "message": "Hello from Flask in Docker & Kubernetes NEW FEATURE branch!",
-        "message": "Production ready version",
+	"message":"THIS PULL REQUEST",
         "pod": os.environ.get("MY_POD", "unknown")
     })
 
