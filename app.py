@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return jsonify({
-	"message":"THIS PULL REQUEST",
+	"message": "THIS PULL REQUEST",
         "pod": os.environ.get("MY_POD", "unknown")
     })
 
