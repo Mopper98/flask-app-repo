@@ -8,6 +8,9 @@ def hello():
     return jsonify({
         "message": "Hello from Flask in Docker & Kubernetes NEW FEATURE branch!",
         "message": "Production ready version",
+	"version": "v1.0",
+        "message": "Hello from Flask in Docker & Kubernetes!!!!!!",
+        "feature": "logging enabled",
         "pod": os.environ.get("MY_POD", "unknown")
     })
 
